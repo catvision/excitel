@@ -6,7 +6,7 @@ it's better to put configs into Objects than to use standard approach and have l
 
 //Database config(s)
 $DB_MAIN = (object)array(
-    "host" => 'localhost:3306',
+    "host" => 'mysql',
     "db_name"=> 'excitel',
     "user" => "test_user",
     "password"=>"testPassword!23^ee"
@@ -14,7 +14,7 @@ $DB_MAIN = (object)array(
 
 //API configs
 $API_LIVE_DATA = (object)array(
-    "URL" => "http://localhost:8020/external_api/index.php",
+    "URL" => "localhost/external_api/index.php",
     "PUBLIC_KEY"=>"excitel",
     "PRIVATE_KEY"=>"sdlk@g!23TYU"
 );

@@ -48,11 +48,24 @@ class APISynh extends commonModel
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
+        $streamVerboseHandle = fopen('php://temp', 'w+');
+        curl_setopt($ch, CURLOPT_STDERR, $streamVerboseHandle);
+        curl_setopt($ch, CURLOPT_VERBOSE, true);
+        
+
         // Execute the request and fetch the response
         $response = curl_exec($ch);
 
         // Check for errors
         if (curl_errno($ch)) {
+
+            curl_close($ch);
+            rewind($streamVerboseHandle);
+$verboseLog = stream_get_contents($streamVerboseHandle);
+
+echo "cUrl verbose information:\n", 
+     "<pre>", htmlspecialchars($verboseLog), "</pre>\n";
+     
             throw new ErrorException("API service is down");
         }
 
@@ -62,6 +75,7 @@ class APISynh extends commonModel
         //Expected format {"result":OK/error, "data":[]}
         $res = json_decode($response);
         if (!$res || !$res->result || $res->result == "error") {
+            echo $res;
             throw new ErrorException("API service is down");
         }
 

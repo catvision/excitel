@@ -26,10 +26,10 @@ class Router extends commonModel
     {
 
         //    parent::__construct();
-        if ($_SERVER['HTTP_HOST'] !== 'localhost:8020' || $_SERVER['REMOTE_ADDR'] !== '127.0.0.1') {
-            header('HTTP/1.1 403 Forbidden');
-            exit('Access Denied');
-        }
+        // if ($_SERVER['HTTP_HOST'] !== 'localhost:8020' || $_SERVER['REMOTE_ADDR'] !== '127.0.0.1') {
+        //     header('HTTP/1.1 403 Forbidden');
+        //     exit('Access Denied');
+        // }
 
         if (preg_match('/^([A-Za-z0-9_])+$/', $_SERVER['QUERY_STRING'], $regs)) {
             $this->controller = $regs[0];
