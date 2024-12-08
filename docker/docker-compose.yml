@@ -1,7 +1,10 @@
 version: '3.8'
-
+networks:
+  my_network:
+    driver: bridge
+    
 services:
-  php:
+  php-excitel:
     build:
       context: ./ # Directory containing the Dockerfile
       dockerfile: Dockerfile
@@ -10,10 +13,14 @@ services:
     volumes:
       - ../:/var/www/html
     depends_on:
-      - mysql
+      - mysql-excitel
+    networks:
+      - my_network  
 
-  mysql:
+  mysql-excitel:
     image: mysql:8.0.16
+    networks:
+      - my_network
     container_name: mysql
     ports:
       - "3369:3306"
@@ -22,6 +29,7 @@ services:
       MYSQL_DATABASE: excitel
       MYSQL_USER: test_user
       MYSQL_PASSWORD: testPassword!23^ee
+      MYSQL_AUTHENTICATION_PLUGIN: mysql_native_password
     volumes:
       - db_data:/var/lib/mysql
       - ./my.cnf:/etc/mysql/my.cnf
