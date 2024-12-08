@@ -1,0 +1,302 @@
+[
+    {
+      "index": 0,
+      "_id": "6751baffd08fe36448305289",
+      "guid": "650ea5d5-69b7-445c-a576-23fb706ad344",
+      "name": "Internet Plan #0",
+      "status": "Active",
+      "price": "$87.91",
+      "type": "Lan",
+      "category": "Quarterly",
+      "tags": [
+        "tag3",
+        "tag4",
+        "tag5"
+      ]
+    },
+    {
+      "index": 1,
+      "_id": "6751baffaafb63f44c85dc2c",
+      "guid": "9a03382c-43d1-4fae-86ed-5362546e5877",
+      "name": "Internet Plan #1",
+      "status": "Inactive",
+      "price": "$87.02",
+      "type": "Fiber",
+      "category": "Quarterly",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag6"
+      ]
+    },
+    {
+      "index": 2,
+      "_id": "6751baff98fe10a69360fe1f",
+      "guid": "80410b1d-4489-47ae-b2b1-476594f4f7f4",
+      "name": "Internet Plan #2",
+      "status": "Active",
+      "price": "$65.55",
+      "type": "Fiber",
+      "category": "Quarterly",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag6"
+      ]
+    },
+    {
+      "index": 3,
+      "_id": "6751baff88ce0702b1a63375",
+      "guid": "41aa5fce-24fa-4729-aeca-5706f2374c2c",
+      "name": "Internet Plan #3",
+      "status": "Active",
+      "price": "$68.14",
+      "type": "Fiber",
+      "category": "Monthly",
+      "tags": [
+        "tag3",
+        "tag4",
+        "tag6"
+      ]
+    },
+    {
+      "index": 4,
+      "_id": "6751baff5e694fdd881f440b",
+      "guid": "dd2fde95-0b76-486a-8dc0-22d5aff51afc",
+      "name": "Internet Plan #4",
+      "status": "Active",
+      "price": "$52.62",
+      "type": "Fiber",
+      "category": "Monthly",
+      "tags": [
+        "tag4",
+        "tag5",
+        "tag6"
+      ]
+    },
+    {
+      "index": 5,
+      "_id": "6751baff0a96f3f9f2987f48",
+      "guid": "11b1b911-0b40-421a-b4a1-5c0a7eac43ec",
+      "name": "Internet Plan #5",
+      "status": "Inactive",
+      "price": "$87.72",
+      "type": "Lan",
+      "category": "Quarterly",
+      "tags": [
+        "tag3",
+        "tag4",
+        "tag5"
+      ]
+    },
+    {
+      "index": 6,
+      "_id": "6751baff95507125aa18e8d0",
+      "guid": "bfda9f9d-a430-40f5-b7b9-18ebe83b1f2b",
+      "name": "Internet Plan #6",
+      "status": "Active",
+      "price": "$96.72",
+      "type": "Fiber",
+      "category": "Monthly",
+      "tags": [
+        "tag1",
+        "tag4",
+        "tag6"
+      ]
+    },
+    {
+      "index": 7,
+      "_id": "6751baffacbab1e08ac1d752",
+      "guid": "a699120f-e1f1-47b3-820a-177a6cfc2a9a",
+      "name": "Internet Plan #7",
+      "status": "Inactive",
+      "price": "$66.59",
+      "type": "Fiber",
+      "category": "Weekly",
+      "tags": [
+        "tag3",
+        "tag5",
+        "tag6"
+      ]
+    },
+    {
+      "index": 8,
+      "_id": "6751baff4ef8bba52464a649",
+      "guid": "a8e7a7dc-3546-4472-8070-4f30579b1f0a",
+      "name": "Internet Plan #8",
+      "status": "Inactive",
+      "price": "$107.77",
+      "type": "Lan",
+      "category": "Weekly",
+      "tags": [
+        "tag2",
+        "tag3",
+        "tag5"
+      ]
+    },
+    {
+      "index": 9,
+      "_id": "6751baff5217c45e78cacb4a",
+      "guid": "d690093c-85a2-48f4-9006-84d0a45b5928",
+      "name": "Internet Plan #9",
+      "status": "Inactive",
+      "price": "$50.74",
+      "type": "Fiber",
+      "category": "Monthly",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag6"
+      ]
+    },
+    {
+      "index": 10,
+      "_id": "6751baff7dda3b8c095f1e83",
+      "guid": "f82c4490-f411-4e11-98b6-eee1c2a97274",
+      "name": "Internet Plan #10",
+      "status": "Active",
+      "price": "$97.31",
+      "type": "Lan",
+      "category": "Weekly",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    },
+    {
+      "index": 11,
+      "_id": "6751baffacfdd0ccc606f07c",
+      "guid": "5bc1084d-8cd7-4a9e-ba59-ca84cbbcfff4",
+      "name": "Internet Plan #11",
+      "status": "Inactive",
+      "price": "$67.63",
+      "type": "Lan",
+      "category": "Weekly",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    },
+    {
+      "index": 12,
+      "_id": "6751baff0cce04f02d600af4",
+      "guid": "f3726878-349d-45ed-b370-c0339e6658ac",
+      "name": "Internet Plan #12",
+      "status": "Inactive",
+      "price": "$77.70",
+      "type": "Lan",
+      "category": "Quarterly",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    },
+    {
+      "index": 13,
+      "_id": "6751baff59ad449d23f911dd",
+      "guid": "8cc6799e-8bab-4acd-8ea5-9becd3a0e6bd",
+      "name": "Internet Plan #13",
+      "status": "Inactive",
+      "price": "$88.83",
+      "type": "Fiber",
+      "category": "Monthly",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag4"
+      ]
+    },
+    {
+      "index": 14,
+      "_id": "6751baff676a153454421b46",
+      "guid": "b4f061aa-9bfe-4900-9344-b6cf216de756",
+      "name": "Internet Plan #14",
+      "status": "Active",
+      "price": "$90.65",
+      "type": "Fiber",
+      "category": "Quarterly",
+      "tags": [
+        "tag2",
+        "tag3",
+        "tag5"
+      ]
+    },
+    {
+      "index": 15,
+      "_id": "6751baffee2300e8788e08b5",
+      "guid": "10180719-ddc9-4ec1-86d9-0bb584a7fdc1",
+      "name": "Internet Plan #15",
+      "status": "Inactive",
+      "price": "$53.88",
+      "type": "Lan",
+      "category": "Weekly",
+      "tags": [
+        "tag1",
+        "tag4",
+        "tag5"
+      ]
+    },
+    {
+        "index": 16,
+        "_id": "6751baff20b3b97572673b9b",
+        "guid": "eb7c511e-be74-4371-8a32-8044df21b9ea",
+        "name": "Internet Plan #16",
+        "status": "Active",
+        "price": "$71.64",
+        "type": "Fiber",
+        "category": "Monthly",
+        "tags": [
+          "tag1",
+          "tag3",
+          "tag5"
+        ]
+      },
+    {
+      "index": 17,
+      "_id": "6751baff85babf2151e8a765",
+      "guid": "d74eadbe-76a8-4547-87b4-0d5d2e8c6d17",
+      "name": "Internet Plan #17",
+      "status": "Active",
+      "price": "$57.42",
+      "type": "Fiber",
+      "category": "Quarterly",
+      "tags": [
+        "tag1",
+        "tag5",
+        "tag6"
+      ]
+    },
+    {
+      "index": 18,
+      "_id": "6751baff8aab6e5653de4a95",
+      "guid": "b09e5d41-fb69-42e6-b88d-3a064574d446",
+      "name": "Internet Plan #18",
+      "status": "Inactive",
+      "price": "$75.75",
+      "type": "Lan",
+      "category": "Quarterly",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag4"
+      ]
+    },
+    {
+      "index": 19,
+      "_id": "6751baffd6751c7241372a0a",
+      "guid": "61397592-245e-4b1d-9d8b-f6ec92410c0a",
+      "name": "Internet Plan #19",
+      "status": "Inactive",
+      "price": "$88.60",
+      "type": "Lan",
+      "category": "Weekly",
+      "tags": [
+        "tag2",
+        "tag4",
+        "tag6"
+      ]
+    }
+  ]
