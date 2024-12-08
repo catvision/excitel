@@ -7,15 +7,14 @@ const TopLeftSection = () => {
 
     return (
         <div className="top-left-container">
-          
-            {loading && <div className="spinner"></div>}
+
 
             {error && <div className="error-message">{error}</div>}
 
-            {!loading && !error && (
+            {!error && (
                 <>
-                    <div className="count-row">Active Count: {activeCount}</div>
-                    <div className="count-row">Inactive Count: {inactiveCount}</div>
+                    <div className="count-row">Active Count: {loading ? 'loading' : activeCount}</div>
+                    <div className="count-row">Inactive Count: {loading ? 'loading' : inactiveCount}</div>
                 </>
             )}
 

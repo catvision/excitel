@@ -21,7 +21,7 @@ services:
     image: mysql:8.0.16
     networks:
       - my_network
-    container_name: mysql
+    container_name: mysql-excitel
     ports:
       - "3369:3306"
     environment:

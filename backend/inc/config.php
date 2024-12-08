@@ -6,7 +6,7 @@ it's better to put configs into Objects than to use standard approach and have l
 
 //Database config(s)
 $DB_MAIN = (object)array(
-    "host" => 'mysql',
+    "host" => 'mysql-excitel',
     "db_name"=> 'excitel',
     "user" => "test_user",
     "password"=>"testPassword!23^ee"
