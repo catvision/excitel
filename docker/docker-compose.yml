@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: ./ # Directory containing the Dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80" # Map host port 8080 to container port 80
+    volumes:
+      - ../:/var/www/html
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0.16
+    container_name: mysql
+    ports:
+      - "3369:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: excitel
+      MYSQL_USER: test_user
+      MYSQL_PASSWORD: testPassword!23^ee
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/my.cnf
+      - ../import.sql:/docker-entrypoint-initdb.d/import.sql
+      - /var/lib/mysql-files:/var/lib/mysql-files
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password  
+
+volumes:
+  db_data:

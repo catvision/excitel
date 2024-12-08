@@ -16,8 +16,8 @@
 
 
 -- Dumping database structure for excitel
-CREATE DATABASE IF NOT EXISTS `excitel` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `excitel`;
+-- CREATE DATABASE IF NOT EXISTS `excitel` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+-- USE `excitel`;
 
 -- Dumping structure for table excitel.plans
 CREATE TABLE IF NOT EXISTS `plans` (
