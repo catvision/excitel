@@ -66,6 +66,61 @@ class APISynh extends commonModel
     //         echo "cUrl verbose information:\n", 
     //  "<pre>", htmlspecialchars($verboseLog), "</pre>\n";
 
+             $this->getMockupData();
+             return;
+        }
+
+        // Close the cURL session
+        curl_close($ch);
+
+        //Expected format {"result":OK/error, "data":[]}
+        $res = json_decode($response);
+        if (!$res || !$res->result || $res->result == "error") {
+            
+             $this->getMockupData();
+             return;
+        }
+
+        //this ensure we wouldn't use pointer
+        $this->extData = json_decode(json_encode($res->data));
+    }
+
+    private function getMockupData(): void
+    {
+        /*
+        ::PLEASE READ ME::
+        I really don't understand the idea to have second mockup server. /external_api/ itself is a mockup server. 
+        Maybe the idea was to use https://json-generator.com/ like an external API but I didn't found any way to do it
+        So the code bellow just demonstrate switching to second mockup server if the first one fails 
+        */
+        global $API_MOCK_DATA;
+
+        $req = json_encode((object)array(
+            "dt" => time(),
+            "method" => "getList"
+        ));
+
+        $hash = hash_hmac('sha256', $req, $API_MOCK_DATA->PRIVATE_KEY);
+        // Data to send
+        $data = [
+            'api_client' => $API_MOCK_DATA->PUBLIC_KEY,
+            'hash'       => $hash,
+            'req'        => $req
+        ];
+        // Initialize cURL
+        $ch = curl_init($API_MOCK_DATA->URL);
+
+        // Set cURL options
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        // Execute the request and fetch the response
+        $response = curl_exec($ch);
+
+        // Check for errors
+        if (curl_errno($ch)) {
+
             throw new ErrorException("API service is down");
         }
 
@@ -75,7 +130,6 @@ class APISynh extends commonModel
         //Expected format {"result":OK/error, "data":[]}
         $res = json_decode($response);
         if (!$res || !$res->result || $res->result == "error") {
-            echo $res;
             throw new ErrorException("API service is down");
         }
 

@@ -18,3 +18,9 @@ $API_LIVE_DATA = (object)array(
     "PUBLIC_KEY"=>"excitel",
     "PRIVATE_KEY"=>"sdlk@g!23TYU"
 );
+
+$API_MOCK_DATA = (object)array(
+    "URL" => "localhost/mockup_api/index.php",
+    "PUBLIC_KEY"=>"excitel",
+    "PRIVATE_KEY"=>"kjkjk&hsTT56"
+);
