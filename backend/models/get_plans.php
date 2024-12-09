@@ -23,6 +23,7 @@ class GetPlans extends commonModel
                     END
                 ) AS inactiveCount
             FROM plans
+            WHERE is_deleted='N'
         ");
         $sth->execute();
         if ($res = $sth->fetch(PDO::FETCH_OBJ)) {
@@ -54,7 +55,7 @@ class GetPlans extends commonModel
         $q = "SELECT 
                     *
                 FROM plans
-                WHERE 1 
+                WHERE is_deleted='N' 
                 $qf
                 LIMIT :page,5
                 ";
@@ -76,7 +77,7 @@ class GetPlans extends commonModel
         // Calculate total amount with this filter
         $qCnt = "SELECT count(id) as recCount
                 FROM plans
-                WHERE 1 
+                WHERE is_deleted='N'
                 $qf
                 ";
 

@@ -5,6 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173, // Default port for Vite
+    watch: {
+      usePolling: true
+    }
+
   },
   build: {
     manifest: true, // Generate a manifest.json file
