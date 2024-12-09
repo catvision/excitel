@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
-
+namespace App\Models;
+use PDO;
 include_once(BASE_PATH . "/models/internet_plan.php");
 
-class GetPlans extends commonModel
+class GetPlans extends CommonModel
 {
     public function getStatusStats()
     {
@@ -26,7 +27,7 @@ class GetPlans extends commonModel
             WHERE is_deleted='N'
         ");
         $sth->execute();
-        if ($res = $sth->fetch(PDO::FETCH_OBJ)) {
+        if ($res = $sth->fetch(\PDO::FETCH_OBJ)) {
             return $res;
         } else {
             return (object)array(
@@ -36,7 +37,7 @@ class GetPlans extends commonModel
         }
     }
 
-    public function getList(Filters $filts): stdClass
+    public function getList(Filters $filts): \stdClass
     {
 
         $qf = "";
@@ -64,12 +65,12 @@ class GetPlans extends commonModel
 
         $sth = $this->db->prepare($q);
         if ($qf != "") {
-            $sth->bindValue(':filtString', '%' . $filts->subString . '%', PDO::PARAM_STR);
+            $sth->bindValue(':filtString', '%' . $filts->subString . '%', \PDO::PARAM_STR);
         }
         $sth->bindValue(":page", $filts->page);
         $sth->execute();
         $items = [];
-        $sth->setFetchMode(PDO::FETCH_CLASS, 'InternetPlanItem');
+        $sth->setFetchMode(PDO::FETCH_CLASS, 'App\Models\InternetPlanItem');
         while ($r = $sth->fetch()) {
             $items[] = $r->toStdCls();
         }
@@ -85,11 +86,11 @@ class GetPlans extends commonModel
 
         $sthCnt = $this->db->prepare($qCnt);
         if ($qf != "") {
-            $sthCnt->bindValue(':filtString', '%' . $filts->subString . '%', PDO::PARAM_STR);
+            $sthCnt->bindValue(':filtString', '%' . $filts->subString . '%', \PDO::PARAM_STR);
         }
         $sthCnt->execute();
         $rowsCount = 0;
-        if ($r = $sthCnt->fetch(PDO::FETCH_OBJ)) {
+        if ($r = $sthCnt->fetch(\PDO::FETCH_OBJ)) {
             $rowsCount = $r->recCount;
         }
 
@@ -100,7 +101,7 @@ class GetPlans extends commonModel
     }
 }
 
-class Filters extends commonModel
+class Filters extends CommonModel
 {
 
     public int $page;

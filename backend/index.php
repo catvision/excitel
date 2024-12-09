@@ -17,7 +17,7 @@ define("BASE_PATH", __DIR__);
 include_once("inc/config.php");
 include_once("models/common.php");
 
-class Router extends commonModel
+class Router extends  App\Models\CommonModel
 {
 
     private $controller = '';

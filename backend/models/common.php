@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
-class commonModel {
+namespace App\Models;
+
+class CommonModel {
 
 
     private static $_db = null;
@@ -14,10 +16,10 @@ class commonModel {
         //define sigleton connection to prevent reconect in child classes
         if($var =="db"){
             if(self::$_db == null){
-                self::$_db = new PDO("mysql:host=$DB_MAIN->host;dbname=$DB_MAIN->db_name;charset=utf8mb4",$DB_MAIN->user,$DB_MAIN->password,[
-                    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, // Enable exceptions
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
-                    PDO::ATTR_EMULATE_PREPARES   => false,
+                self::$_db = new \PDO("mysql:host=$DB_MAIN->host;dbname=$DB_MAIN->db_name;charset=utf8mb4",$DB_MAIN->user,$DB_MAIN->password,[
+                    \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION, // Enable exceptions
+                    \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_OBJ,
+                    \PDO::ATTR_EMULATE_PREPARES   => false,
                 ]);
             }
             return self::$_db;

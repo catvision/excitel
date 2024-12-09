@@ -4,8 +4,8 @@ import { useStats } from './StatsContext';
 const FilterComponent = () => {
    
     const { filterType,inputValue, awaitableSetState, fetchPlans } = useStats(); 
-  // Refs for the dropdown and input elements
-  const dropdownRef = useRef(null);
+  // Refs for the droPDOwn and input elements
+  const droPDOwnRef = useRef(null);
   const inputRef = useRef(null);
 
   // State to track the user's input and the hint display
@@ -14,8 +14,8 @@ const FilterComponent = () => {
   const [showHint, setShowHint] = useState(false);
   let typingTimer = useRef(null);
 
-  // Handle changes in the dropdown
-  const handleDropdownChange = (event) => {
+  // Handle changes in the droPDOwn
+  const handleDroPDOwnChange = (event) => {
     //setFilterType(event.target.value);
     awaitableSetState("filterType",event.target.value);
   };
@@ -62,9 +62,9 @@ const FilterComponent = () => {
     <div className="filter-box">
       <div >
         <select
-          ref={dropdownRef}
+          ref={droPDOwnRef}
           value={filterType}
-          onChange={handleDropdownChange}
+          onChange={handleDroPDOwnChange}
           
         >
           <option value="byName">By Name</option>

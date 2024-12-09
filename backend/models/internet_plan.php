@@ -1,7 +1,8 @@
 <?php
-
 declare(strict_types=1);
-class InternetPlanItem extends commonModel
+namespace App\Models;
+
+class InternetPlanItem extends CommonModel
 {
 
     public int $id;
@@ -39,7 +40,7 @@ class InternetPlanItem extends commonModel
 
     public function __set(string $var, $val): void {}
 
-    public static function fromAPIEntry(stdClass $entry): InternetPlanItem
+    public static function fromAPIEntry(\stdClass $entry): InternetPlanItem
     {
 
         $res = new self();
@@ -102,7 +103,7 @@ class InternetPlanItem extends commonModel
         return json_encode($res) ;
     }
 
-    public function toStdCls(): stdClass
+    public function toStdCls(): \stdClass
     {
 
         $res = (object)array(

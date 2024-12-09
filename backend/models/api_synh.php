@@ -17,10 +17,11 @@ My solution:
 */
 
 declare(strict_types=1);
+namespace App\Models;
 
 include_once(BASE_PATH . "/models/internet_plan.php");
 
-class APISynh extends commonModel
+class APISynh extends CommonModel
 {
     private array $extData;
 
@@ -145,7 +146,7 @@ class APISynh extends commonModel
                                    WHERE table_schema = 'excitel' 
                                      AND table_name = 'tmp_plans'");
             $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_OBJ);
+            $result = $stmt->fetch(\PDO::FETCH_OBJ);
 
             if ($result->table_count > 0) {
                 $this->dropTempTable();
@@ -153,8 +154,8 @@ class APISynh extends commonModel
 
             $createStmt = "CREATE TABLE tmp_plans LIKE plans;";
             $this->db->exec($createStmt);
-        } catch (PDOException $e) {
-            // Handle PDO exceptions (database errors)
+        } catch (\PDOException $e) {
+            // Handle \PDO exceptions (database errors)
             echo "Database Error: " . $e->getMessage();
         } catch (Exception $e) {
             // Handle general exceptions
@@ -170,7 +171,7 @@ class APISynh extends commonModel
                                    WHERE table_schema = 'excitel' 
                                      AND table_name = 'tmp_plans'");
             $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_OBJ);
+            $result = $stmt->fetch(\PDO::FETCH_OBJ);
 
             if ($result->table_count < 1) {
 
@@ -180,8 +181,8 @@ class APISynh extends commonModel
                 $dropStmt = "DROP TABLE tmp_plans;";
                 $this->db->exec($dropStmt);
             }
-        } catch (PDOException $e) {
-            // Handle PDO exceptions (database errors)
+        } catch (\PDOException $e) {
+            // Handle \PDO exceptions (database errors)
             echo "Database Error: " . $e->getMessage();
         } catch (Exception $e) {
             // Handle general exceptions
