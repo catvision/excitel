@@ -4,7 +4,7 @@
 FROM php:7.4-apache
 
 # Enable necessary PHP extensions
-RUN docker-php-ext-install mysqli PDO PDO_mysql
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Copy your backend code to the container
 COPY ../ /var/www/html
